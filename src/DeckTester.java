@@ -47,7 +47,7 @@ public class DeckTester {
 			System.out.println("There are no cards left");
 		}
 		else{
-			System.out.println(deck.deal().toString());
+			System.out.println(returned.toString());
 			System.out.println(deck.size() + " cards left");
 		}
 		
