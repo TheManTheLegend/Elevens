@@ -4,12 +4,13 @@
  * <code>Card</code> represents a playing card.
  */
 public class Card {
-
+	String cardRank, cardSuit;
+	int cardPointValue;
 	/**
 	 * String value that holds the suit of the card
 	 */
 	private String suit;
-
+		
 	/**
 	 * String value that holds the rank of the card
 	 */
@@ -33,6 +34,9 @@ public class Card {
 	 */
 	public Card(String cardRank, String cardSuit, int cardPointValue) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		rank = cardRank;
+		suit = cardSuit;
+		pointValue = cardPointValue;
 	}
 
 
@@ -42,6 +46,7 @@ public class Card {
 	 */
 	public String suit() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		return suit;
    }
 
 	/**
@@ -50,6 +55,7 @@ public class Card {
 	 */
 	public String rank() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		return rank;
 	}
 
    /**
@@ -58,6 +64,7 @@ public class Card {
 	 */
 	public int pointValue() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		return pointValue;
 	}
 
 	/** Compare this card with the argument.
@@ -68,8 +75,8 @@ public class Card {
 	 */
 	public boolean matches(Card otherCard) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		return otherCard.suit == suit && otherCard.rank == rank && otherCard.pointValue == pointValue;
 	}
-
 	/**
 	 * Converts the rank, suit, and point value into a string in the format
 	 *     "[Rank] of [Suit] (point value = [PointValue])".
@@ -83,5 +90,6 @@ public class Card {
 	@Override
 	public String toString() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		return rank + " of " + suit + " (point value = " + pointValue + ")";
 	}
 }
