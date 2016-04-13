@@ -75,10 +75,15 @@ public class Deck {
 	 */
 	public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		int r = (int) (cards.size() * Math.random());
-		Card c = cards.get(r);
-		cards.remove(r);
+		if (isEmpty()){
+			return new Card("0","0",0);
+		}
+		
+		
+		Card c = cards.get(cards.size()-1);
+		cards.remove(cards.size()-1);
 		return(c);
+		
 		
 		
 		
