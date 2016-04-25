@@ -42,6 +42,7 @@ public class DeckTester {
 		Card flse = new Card("0","0",0);
 		
 		Deck deck = new Deck(ranks, suits, points);
+	
 		Card returned = deck.deal();
 		if (returned.matches(flse)){
 			System.out.println("There are no cards left");
