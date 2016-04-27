@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.ArrayList;
+
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -15,31 +18,31 @@ public class Shuffler {
 	 * @param args is not used.
 	 */
 	public static void main(String[] args) {
-		System.out.println("Results of " + SHUFFLE_COUNT +
-								 " consecutive perfect shuffles:");
-		int[] values1 = {0, 1, 2, 3};
-		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-			perfectShuffle(values1);
-			System.out.print("  " + j + ":");
-			for (int k = 0; k < values1.length; k++) {
-				System.out.print(" " + values1[k]);
-			}
-			System.out.println();
-		}
-		System.out.println();
-
-		System.out.println("Results of " + SHUFFLE_COUNT +
-								 " consecutive efficient selection shuffles:");
-		int[] values2 = {0, 1, 2, 3};
-		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-			selectionShuffle(values2);
-			System.out.print("  " + j + ":");
-			for (int k = 0; k < values2.length; k++) {
-				System.out.print(" " + values2[k]);
-			}
-			System.out.println();
-		}
-		System.out.println();
+//		System.out.println("Results of " + SHUFFLE_COUNT +
+//								 " consecutive perfect shuffles:");
+//		int[] values1 = {0, 1, 2, 3};
+//		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
+//			perfectShuffle(values1);
+//			System.out.print("  " + j + ":");
+//			for (int k = 0; k < values1.length; k++) {
+//				System.out.print(" " + values1[k]);
+//			}
+//			System.out.println();
+//		}
+//		System.out.println();
+//
+//		System.out.println("Results of " + SHUFFLE_COUNT +
+//								 " consecutive efficient selection shuffles:");
+//		int[] values2 = {0, 1, 2, 3};
+//		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
+//			selectionShuffle(values2);
+//			System.out.print("  " + j + ":");
+//			for (int k = 0; k < values2.length; k++) {
+//				System.out.print(" " + values2[k]);
+//			}
+//			System.out.println();
+//		}
+//		System.out.println();
 	}
 
 
@@ -85,15 +88,19 @@ public class Shuffler {
 	 * searching for an as-yet-unselected card.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void selectionShuffle(int[] values) {
+	public static List<Card> selectionShuffle(List<Card> cards) {
 		int rand;
-		int[] temparray = values;
-		for(int i = 0; i < values.length; i++){
-			rand = (int) ((values.length) * Math.random());
-			int temp = values[rand];
-			temparray[rand] = values[i];
-			values[i] = temp;
+		List<Card> thingy = new ArrayList<Card>();
+		
+		for(int i = 0; i < cards.size(); i++){
+			rand = (int) ((cards.size()) * Math.random());
+			thingy.add(cards.get(rand));
+			
+			
 		}
+		cards = thingy;
+		return cards;
+
 	}
 
 	

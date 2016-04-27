@@ -11,7 +11,8 @@ public class Deck {
 	/**
 	 * cards contains all the cards in the deck.
 	 */
-	ArrayList<Card> cards = new ArrayList<Card>();
+	private List<Card> cards;
+
 	/**
 	 * size is the number of not-yet-dealt cards.
 	 * Cards are dealt from the top (highest index) down.
@@ -29,15 +30,14 @@ public class Deck {
 	 * @param values is an array containing all of the card point values.
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
-		
-		
-		for(int i = 0; i < ranks.length; i++){
-			for(int j = 0; j < suits.length; j++){
-				for(int x = 0; x < values.length; x++){
-					cards.add(new Card(ranks[i],suits[j],values[x]));
-				}
+		cards = new ArrayList<Card>();
+		for (int j = 0; j < ranks.length; j++) {
+			for (String suitString : suits) {
+				cards.add(new Card(ranks[j], suitString, values[j]));
 			}
 		}
+		size = cards.size();
+		cards = shuffle(cards);
 	}
 
 
@@ -46,9 +46,7 @@ public class Deck {
 	 * @return true if this deck is empty, false otherwise.
 	 */
 	public boolean isEmpty() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		return cards.size() == 0;
-		
+		return size == 0;
 	}
 
 	/**
@@ -56,16 +54,16 @@ public class Deck {
 	 * @return the number of undealt cards in this deck.
 	 */
 	public int size() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		return cards.size();
+		return size;
 	}
 
 	/**
 	 * Randomly permute the given collection of cards
 	 * and reset the size to represent the entire deck.
 	 */
-	public void shuffle() {
+	public List<Card> shuffle(List<Card> cards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		return Shuffler.selectionShuffle(cards);
 	}
 
 	/**
@@ -74,19 +72,12 @@ public class Deck {
 	 *         previously dealt.
 	 */
 	public Card deal() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		if (isEmpty()){
-			return new Card("0","0",0);
+		if (isEmpty()) {
+			return null;
 		}
-		
-		
-		Card c = cards.get(cards.size()-1);
-		cards.remove(cards.size()-1);
-		return(c);
-		
-		
-		
-		
+		size--;
+		Card c = cards.get(size);
+		return c;
 	}
 
 	/**
