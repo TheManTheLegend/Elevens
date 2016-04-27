@@ -91,10 +91,12 @@ public class Shuffler {
 	public static List<Card> selectionShuffle(List<Card> cards) {
 		int rand;
 		List<Card> thingy = new ArrayList<Card>();
+		int eh = cards.size();
 		
-		for(int i = 0; i < cards.size(); i++){
+		for(int i = 0; i < eh; i++){
 			rand = (int) ((cards.size()) * Math.random());
 			thingy.add(cards.get(rand));
+			cards.remove(rand);
 			
 			
 		}
