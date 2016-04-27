@@ -1,20 +1,3 @@
-1. public static String flip{
-	int r = Math.random();
-	if(r < 0.66){
-	return "heads";
-	}
-	return "tails";
-	}	
-2. public static boolean arePermutations(int[] first, int[] second){
-Boolean thing = true;
- for(int i = 0; i < first.length; i++){
- 	for(int j = 0; j < second.length; j++){
- 		if(first[i] == second[j]){
- 		thing = false;
- 		}
- 	}
- }
- return thing;
-}
-
-3. the random integers in order are 3,2,1,0. This would flip the entire array since the original order of placements in 0,1,2,3.
+1. 5 of spades or clubs with the six
+2. The last three cards have to be  J Q and K because if they aren't, two of the cards might total to eleven but then one card will be left. Since one card can't be paired for anything, the player then loses. Getting all face cards is the only effective removal of the three cards.
+3. No, the game is completely up to chance. Anytime some cards are removed random ones replace it. 100% luck.
