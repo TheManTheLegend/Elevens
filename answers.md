@@ -1,10 +1,3 @@
-1. deck, cards, selected cards, replacement cards
-2. list all pairs of cards that total to eleven, add the that list any group of J Q and K. Select on group and remove it. Replace all cards removed. this list of groups is empty, you lose, if the board is empty you win.
-3. yes
-4. a. elevensBoard(), newGame(), 
-   b. anotherPlayIsPossible() 
-   c. J, 6, 2, A, 4
-   d. for(int i = 0; i < cIndex.size(); i++){
-   		System.out.println(cIndex.get(i).rank() + " of " + cIndex.get(i).suit() + " (point value = " + cIndex.get(i).pointValue());
-   }
-   e. anotherPlayIsPossible() because the function needs to look at what cards are on the board before deciding which cards can be removed.
+1. in all three games cards must be paired up to total a specific number and then removed. Tens and Elevens both involve matching up face cards in a strange way the differs from the original pattern. Also all three game are won and lost in the same way. 
+2. the board size would be confined to 9 and the point values of all of the face cards would be called 12 since that way if couldn't fit into the regular pattern the others cards follow. Meanwhile all other cards would be assigned a point values equal to their rank.
+3. Yes, since the board only refers to how the game is set up, the different rules of each game don't need to be specified. The only differences are board size, point values, ranks, and suits which are all accounted for.
